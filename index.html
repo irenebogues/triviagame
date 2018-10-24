@@ -5,11 +5,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Trivia Game</title>
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">  
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
     <body>
-        
+        <main>
+              <div id="trivia">
+                <form id="quizzes">
+<!--fieldset is taken from https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/How_to_structure_an_HTML_form-->
+                        <fieldset>
+                          <legend>Trivia Questions</legend>
+                          <p>
+                            <input type="radio" name="size" id="size_1" value="small">
+                            <label for="size_1">Small</label>
+                          </p>
+                          <p>
+                            <input type="radio" name="size" id="size_2" value="medium">
+                            <label for="size_2">Medium</label>
+                          </p>
+                          <p>
+                            <input type="radio" name="size" id="size_3" value="large">
+                            <label for="size_3">Large</label>
+                          </p>
+                          <button id="Answer" onclick="triviaGame.triggerQuestions()">Start Trivia Game
+
+                          </button>
+                        </fieldset>
+                      </form>
+                </div>
+                </main> 
 
             <script src="https://code.jquery.com/jquery.js"></script>
             <script src="./assets/javascript/app.js"></script>
