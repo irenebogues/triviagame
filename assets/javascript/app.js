@@ -15,7 +15,8 @@ function triggerQuestions () {
  
 
 
-
+//Call triggerQuestions function.
+//
 //Trigger random questions.
 
     //var random = Math.floor((Math.random() * triviaGame.questions.length));
@@ -23,9 +24,16 @@ function triggerQuestions () {
     //$("#question").html(currentObject.q);
     //currentObject.read = true;
 
+    //Start with the easy assignment first where the timer and questions are all in 
+
        //Generating the options with a loop
-       for (var i = 1; i < 5; i++) {
-        $("#quizzes").append('<input id="quiz' + i + '" type="radio">' + " " + currentObject['a'+i] + '</input><br>');
+       //Create a for loop for each array
+       i = 0;
+       for (var i = 1; i < triviaGame.questions.length; i++) {
+           //
+        $("#quizzes").append('<input id="quiz' + i + '" type="radio">' + " " + currentObject['a'+i] + '</input><br>'); 
+        //create a variable that reference the question
+        //
     }
 }
 

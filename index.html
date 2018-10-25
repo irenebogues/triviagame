@@ -15,6 +15,7 @@
                         <fieldset>
                           <legend>Trivia Questions</legend>
                           <p>
+                            <!--Use it as a placeholder -->
                             <input type="radio" name="size" id="size_1" value="small">
                             <label for="size_1">Small</label>
                           </p>
@@ -26,12 +27,17 @@
                             <input type="radio" name="size" id="size_3" value="large">
                             <label for="size_3">Large</label>
                           </p>
-                          <button id="Answer" onclick="triviaGame.triggerQuestions()">Start Trivia Game
+                          <!--use click listerner in jquery-->
 
-                          </button>
+                          
                         </fieldset>
                       </form>
-                </div>
+                    </div>
+                    <!--Update the text of the button / start/submit answer or stop-->
+                    <!---->
+
+                  <button id="Answer">Start Trivia Game
+                  </button>
                 </main> 
 
             <script src="https://code.jquery.com/jquery.js"></script>
@@ -39,6 +45,5 @@
     </body>
 </head>
 </html>
-
 
 
