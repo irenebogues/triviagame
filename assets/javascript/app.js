@@ -29,7 +29,7 @@ function triggerQuestions () {
        //Generating the options with a loop
        //Create a for loop for each array
        i = 0;
-       for (var i = 1; i < triviaGame.questions.length; i++) {
+       for (var i = 1; i < triviaGame.questions.length; i++) { // .length to go thru the questions each
            //
         $("#quizzes").append('<input id="quiz' + i + '" type="radio">' + " " + currentObject['a'+i] + '</input><br>'); 
         //create a variable that reference the question
@@ -37,6 +37,9 @@ function triggerQuestions () {
     }
 }
 
+//capture the user inputs
+//check the right and wrong
+//which option that the user click after the submit button is clicked.
 
  //I will create a trivia form with multiple choice or true/false options.
 //Start button appears when page loads, timer starts counting down 
