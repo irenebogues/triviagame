@@ -1,49 +1,107 @@
 // from https://trivia.fyi/
 
-
-
-
-
-
-// 
-
+//If counter gets to 0, alert Times Up! and questions are marked incorrect.
 $(document).ready(function() {
-    var timeleft = 60;
+    var timeleft = 120;
     var downloadTimer = setInterval(function(){
     timeleft--;
      document.getElementById('timer').textContent = timeleft;
     
     if(timeleft <= 0)
         clearInterval(downloadTimer);
-    },1000)
+    },1000);
   });
 
+// New Trivia Game
+(function() {
+  function newTrivia() {
+    //Array to store HTML output
+    var output = [];
 
-
-
+    //For each question loop
+    triviaGame.forEach((newTrivia, tNum) => {
+      //Array to store answers
+      //Store right and wrong answers
+      var answers = [];
 
   
+    for (ansLetter in newTrivia.answers) {
+        //Add radio button for each answer - Found this snippet on another site and modified.
+        answers.push(
+          `<label>
+            <input type="radio" name="trivia${tNum}" value="${ansLetter}">
+            ${ansLetter} :
+            ${newTrivia.answers[ansLetter]}
+           </label>` 
+        );
+      }
+
+//Push question and answers to answers array
+output.push(
+    `<div class="question"> ${newTrivia.question} </div>
+    <div class="answers"> ${answers.join("")} </div>`
+  );
+});
+
+//Push the questions, answers, and radio buttons to HTML
+quizContainer.innerHTML = output.join("");
+};
 
 
+ //Track answers
+ function showResults() {
+    var answerArrays = quizContainer.querySelectorAll(".answers");
+ 
+  let numCorrect = 0;
 
 
+//Get users answers
+triviaGame.forEach((newTrivia, qNum) => {
+    //This section contains some snippets from other sites that have been combined or modified
+    var answerArray = answerArrays[qNum];
+    var selector = "input[name=question${qNum}]:checked";
+    var userAnswer = (answerArray.querySelector(selector) || {}).value;
 
-// var triviaGame = {
-//     Create an array of objects, each one representing a question
-//     questions: [ { q: "Which of the following is not a member of OPEC?", a1: "United States", a2: "Venezuela", a3: "Singapore", a4: "Saudi Arabia", correct: 3, comment: "Singapore is not a member of OPEC"},
-//                  { q: "What is the only mammal born with horns?", a1: "Elephants", a2: "Rhinceros", a3: "Giraffe", a4: "Wild Boar", correct: 3, comment: "Giraffe is the only mammal with horns"},
-//                  { q: "In what city you would find the Wizard of Oz?", a1:"Kansas City", a2: "Emerald City", a3: "Lion City", a4: "The City of Gold", correct: 2, comment: "The correct answer is Emerald City"},
-//                  { q: "?", a1: "", a2: "", a3: "", a4: "", correct: 0, comment: "" } ],
-//     winCount: 0,
-//     loseCount: 0,
-//  };
+    // Increment CORRECT if answer is correct
+    if (userAnswer === newTrivia.correctAnswer) {          
+      numCorrect++;
+    }
+    });
 
-// function triggerQuestions () {
-//     $("#trivia").empty();
+//Display score
+
+resultsArray.innerHTML = `${numCorrect} out of ${triviaGame.length}`;
+}
+
+var quizContainer = document.getElementById("quiz");
+var resultsArray = document.getElementById("results");
+var submitButton = document.getElementById("answers");
+
+var triviaGame = [
+//    Create an array of objects, each one representing a question
+questions =  
+    {trivia: "Which of the following is not a member of OPEC?",
+        answer: {a1: "United States", a2: "Venezuela", a3: "Singapore", a4: "Saudi Arabia"}, correctAnswer: "a3"},
+    {trivia: "What is the only mammal born with horns?", 
+        answer: {a1: "Elephants", a2: "Rhinceros", a3: "Giraffe", a4: "Wild Boar"}, correctAnswer: "a3"},
+    {trivia: "In what city you would find the Wizard of Oz?", 
+        answer: {a1: "Kansas City", a2: "Emerald City", a3: "Lion City", a4: "The City of Gold"}, correctAnswer: "a2"},
+
+];
+
+
+//Call function newTrivia
+newTrivia();
+  
+//Button to display score
+submitButton.addEventListener("click", showResults);
+})(); 
+
+
  
 
 
-//Call triggerQuestions function.
+//Call newTrivia function.
 //
 //Trigger random questions.
 
@@ -54,18 +112,7 @@ $(document).ready(function() {
 
     //Start with the easy assignment first where the timer and questions are all in 
 
-       //Generating the options with a loop
-       //Create a for loop for each array
-//        i = 0;
-//        for (var i = 1; i < triviaGame.questions.length; i++) { // .length to go thru the questions each
-//            //
-//         $("#quizzes").append('<input id="quiz' + i + '" type="radio">' + " " + currentObject['a'+i] + '</input><br>'); 
-//         //create a variable that reference the question
-//         //
-//     }
-// }
-
-
+       
 
 
 
@@ -95,3 +142,4 @@ $(document).ready(function() {
 
 
 // At the end of the game, display correct and incorrect answers, as well as a button to restart the game.
+ 

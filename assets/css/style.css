@@ -1,34 +1,54 @@
 
 body {
-    background-image: url(../images/trivia.jpg);
+    height: 100%;
+    width: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: 'Monoton', cursive;
+    font-family: 'Slabo 27px', serif;
     font-size: 20px;
     text-align: center;
 };
 
 
-
-#container {
-    background-image: url(../images/trivia.jpg);
-    font-size: 20px;
-    text-align: center;
-    font-family: 'Slabo 27px', serif;
-
+.answers {
+    margin-bottom: 20px;
 }
 
-button:hover,
-button:focus {
+
+ .quiz {
+    text-align: left;
+    padding-left: 50px;
+    color: blue;
+}
+ .answers label {
+    display: block;
+    background-color: rgb(245, 201, 245);        
+}
+ p, #results {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+
+.resultsBoard {
+    padding-top: 20px;
+    padding-right: 50px;
+}
+#answers:hover,
+#answers:focus {
     background: #0053ba;
+    font-family: 'Slabo 27px', serif;
     font-display: white;
+    
 }
 
-button:focus {
+#answers:focus {
     outline: 1px solid #fff;
     outline-offset: -4px;
 }
 
-button:active {
+#answers:active {
     transform: scale(0.99);
 }
+
+/*  */

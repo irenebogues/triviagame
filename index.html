@@ -4,64 +4,51 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Trivia Game</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
-    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
-    <body>
-        <div class="container-fluid">
+        <!-- Style Sheet -->
+          <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+        <!-- Alternate Style Sheet -->
+        <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
+      <!-- Links for Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+      <!-- Jquery Link -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+ </head>   
+    <body style="background-image: url("./images/trivia.jpg");">
+        <div class="container">
           <div class="row"></div>
-          <div class="col-sm-12">
-              <div id="trivia">
+          <div class="col-sm-12" id="main-trivia">
                 <h1>Trivia Questions</h1>
               </div>
-
-                <form id="quizzes">
-<!--fieldset is taken from https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/How_to_structure_an_HTML_form-->
-                        <fieldset>
-                          <p>
-                            <!--Use it as a placeholder -->
-                            <input type="radio" name="size" id="size_1" value="small">
-                            <label for="size_1">Small</label>
-                          </p>
-                          <p>
-                            <input type="radio" name="size" id="size_2" value="medium">
-                            <label for="size_2">Medium</label>
-                          </p>
-                          <p>
-                            <input type="radio" name="size" id="size_3" value="large">
-                            <label for="size_3">Large</label>
-                          </p>
-                          <!--use click listerner in jquery-->
-
-                          
-                        </fieldset>
-                      </form>
+               
                     </div>
-                    <!--Update the text of the button / start/submit answer or stop-->
+                    <!--Trivia Timer-->
                     
-                    <div id="results"></div>
-
                     <div class="col-sm-2">
-                        <p> The Quiz will End in <span id="timer"> </span> Seconds</p>
+                        <div class="resultsBoard col-sm-3">
+                          <p> The Quiz will End in <span id="timer"> </span> Seconds</p>
                         <br>
                       <div id="results"></div>
                       <br>
-                  <button id="Answer">Submit
+                      <!-- Submit Answer Button -->
+                  <button class="answer">Submit Answers
                   </button>
               </div>
-              <div class="quiz col-sm-8">
+              <!--  -->
+              <div class="trivia col-sm-6">
               
-                  <div id="quiz"></div>
+                  <div id="trivia"></div>
                    
                   
                   </div>
-                   <div class="col-sm-2"></div>
+                   <div class="ra col-sm-3"></div>
                   <div class="col-sm-12">
                    </div>
               </div>
           </div>
-            <script src="https://code.jquery.com/jquery.js"></script>
-            <script src="./assets/javascript/app.js"></script>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="assets/javascript/app.js"></script>
+      <script type="text/javascript" src="assets/javascript/app.js"></script>
     </body>
 </head>
 </html>
