@@ -2,15 +2,28 @@
 
 //If counter gets to 0, alert Times Up! and questions are marked incorrect.
 $(document).ready(function() {
-    var timeleft = 120;
-    var downloadTimer = setInterval(function(){
-    timeleft--;
-     document.getElementById('timer').textContent = timeleft;
+
+
+  var countDown = 30;
+  var quizTimer = setInterval(function () {
+    countDown--;
+
+  document.getElementById('timer').textContent = countDown;
+
+  if (countDown <= 0)
+          clearInterval(quizTimer);
+      }, 1000)
+    });
+
+  //   var timeleft = 120;
+  //   var downloadTimer = setInterval(function(){
+  //   timeleft--;
+  //    document.getElementById('timer').textContent = timeleft;
     
-    if(timeleft <= 0)
-        clearInterval(downloadTimer);
-    },1000);
-  });
+  //   if(timeleft <= 0)
+  //       clearInterval(downloadTimer);
+  //   },1000);
+  // });
 
 // New Trivia Game
 (function() {
@@ -18,34 +31,31 @@ $(document).ready(function() {
     //Array to store HTML output
     var output = [];
 
-    //For each question loop
+//     //For each question loop
     triviaGame.forEach((newTrivia, tNum) => {
       //Array to store answers
       //Store right and wrong answers
       var answers = [];
 
   
-    for (ansLetter in newTrivia.answers) {
+     for (ansLetter in newTrivia.answers) {
         //Add radio button for each answer - Found this snippet on another site and modified.
-        answers.push(
-          `<label>
-            <input type="radio" name="trivia${tNum}" value="${ansLetter}">
-            ${ansLetter} :
-            ${newTrivia.answers[ansLetter]}
-           </label>` 
-        );
-      }
+       answers.push(
+          `<label> </label>` 
 
+        
+        );
+    
 //Push question and answers to answers array
 output.push(
     `<div class="question"> ${newTrivia.question} </div>
     <div class="answers"> ${answers.join("")} </div>`
   );
-});
+
 
 //Push the questions, answers, and radio buttons to HTML
 quizContainer.innerHTML = output.join("");
-};
+}
 
 
  //Track answers
@@ -59,7 +69,7 @@ quizContainer.innerHTML = output.join("");
 triviaGame.forEach((newTrivia, qNum) => {
     //This section contains some snippets from other sites that have been combined or modified
     var answerArray = answerArrays[qNum];
-    var selector = "input[name=question${qNum}]:checked";
+    var selector = 'input[name=question${qNum}]:checked';
     var userAnswer = (answerArray.querySelector(selector) || {}).value;
 
     // Increment CORRECT if answer is correct
@@ -95,7 +105,13 @@ newTrivia();
   
 //Button to display score
 submitButton.addEventListener("click", showResults);
-})(); 
+$(function () {
+  $('.ra').click(function () {
+     $('.ra').hide();
+    $('.ra').show();
+  });
+})
+})
 
 
  
@@ -142,4 +158,4 @@ submitButton.addEventListener("click", showResults);
 
 
 // At the end of the game, display correct and incorrect answers, as well as a button to restart the game.
- 
+

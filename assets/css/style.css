@@ -1,54 +1,83 @@
 
-body {
-    height: 100%;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: 'Slabo 27px', serif;
-    font-size: 20px;
-    text-align: center;
-};
+    body {
+        font-family: 'Slabo 27px', serif;
+        font-size: 20px;
+        text-align: center;
+        background-image: url(../images/trivia.png);
+        background-repeat: no-repeat;
+        font-size: 20px;
+    }
+
+    h1 {
+        font-family: 'Slabo 27px', serif;
+
+    }
+    .answers {
+        margin-bottom: 20px;
+    }
 
 
-.answers {
-    margin-bottom: 20px;
-}
+    .trivia {
+        display: block;
+        background-color: lightcoral;
+        color: lightgreen;
+        font-weight: bold;
+        font-size: 1.3em;
+        padding-left: 5px;
+        border-radius: 12px;
+    }
+
+    .quiz {
+        text-align: left;
+        padding-left: 50px;
+        color: blue;
+    }
+    .answers label {
+        display: block;
+        background-color: rgb(245, 201, 245);        
+    }
+    p, #results {
+        font-size: 1.3em;
+        font-weight: bold;
+    }
 
 
- .quiz {
-    text-align: left;
-    padding-left: 50px;
-    color: blue;
-}
- .answers label {
-    display: block;
-    background-color: rgb(245, 201, 245);        
-}
- p, #results {
-    font-size: 1.3em;
-    font-weight: bold;
-}
+    .resultsBoard {
+        padding-top: 20px;
+        padding-right: 50px;
+    }
+    #answers:hover,
+    #answers:focus {
+        background: #0053ba;
+        font-family: 'Slabo 27px', serif;
+        color: white;
+        
+    }
 
+    #answers:focus {
+        outline: 1px solid #fff;
+        outline-offset: -4px;
+    }
 
-.resultsBoard {
-    padding-top: 20px;
-    padding-right: 50px;
-}
-#answers:hover,
-#answers:focus {
-    background: #0053ba;
-    font-family: 'Slabo 27px', serif;
-    font-display: white;
-    
-}
+    #answers:active {
+        transform: scale(0.99);
+    }
 
-#answers:focus {
-    outline: 1px solid #fff;
-    outline-offset: -4px;
-}
+    .quiz {
+        text-align: left;
+        padding-left: 50px;
+        color: blue;
+    }
+    .answers label {
+       display: block;
+       background-color: lightslategray;        
+       background-color: lightgoldenrodyellow;  
+       padding-left: 5px;
+       border-radius: 12px;   
+   }
+   
+    .resultsBoard {
+        padding-top: 50px;
+        padding-right: 50px;
+        }
 
-#answers:active {
-    transform: scale(0.99);
-}
-
-/*  */
