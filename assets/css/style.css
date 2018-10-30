@@ -1,15 +1,16 @@
 
     body {
         font-family: 'Slabo 27px', serif;
-        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
         text-align: center;
         background-image: url(../images/trivia.png);
         background-repeat: no-repeat;
-        font-size: 20px;
+        background-size: cover;
     }
 
     h1 {
         font-family: 'Slabo 27px', serif;
+        font-size: 40px;
 
     }
     .answers {
@@ -22,15 +23,12 @@
         background-color: lightcoral;
         color: lightgreen;
         font-weight: bold;
-        font-size: 1.3em;
+        font-size: 10px;
         padding-left: 5px;
         border-radius: 12px;
     }
 
-    .quiz {
-        text-align: left;
-        padding-left: 50px;
-        color: blue;
+    
     }
     .answers label {
         display: block;
@@ -66,7 +64,7 @@
     .quiz {
         text-align: left;
         padding-left: 50px;
-        color: blue;
+        color: saddlebrown;
     }
     .answers label {
        display: block;

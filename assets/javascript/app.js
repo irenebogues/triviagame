@@ -3,17 +3,28 @@
 //If counter gets to 0, alert Times Up! and questions are marked incorrect.
 $(document).ready(function() {
 
+  setTimeout(timeUp, 1000 * 30);
+  function timeUp() {
 
-  var countDown = 30;
-  var quizTimer = setInterval(function () {
-    countDown--;
+    $('body').css("background-image", "url(../images/trivia2.png)");  
+    $('.resultsBoard').css('font-size', '2em').css('color', '#FF0000');
+    $('.trivia').css('visibility', 'hidden');
+    $('.rad').css("visibility", "visible");  
+  }
+});
 
-  document.getElementById('timer').textContent = countDown;
+  // var countDown = 30;
+  // var quizTimer = setInterval(function () {
+  //   countDown--;
 
-  if (countDown <= 0)
-          clearInterval(quizTimer);
-      }, 1000)
-    });
+
+
+  // document.getElementById('timer').textContent = countDown;
+
+  // if (countDown <= 0)
+  //         clearInterval(quizTimer);
+  //     }, 1000)
+  //   });
 
   //   var timeleft = 120;
   //   var downloadTimer = setInterval(function(){
@@ -103,12 +114,12 @@ questions =
 //Call function newTrivia
 newTrivia();
   
-//Button to display score
+//Rad Party Button to display score
 submitButton.addEventListener("click", showResults);
 $(function () {
-  $('.ra').click(function () {
-     $('.ra').hide();
-    $('.ra').show();
+  $('.rad').click(function () {
+     $('.rad').hide();
+    $('.rad').show();
   });
 })
 })
