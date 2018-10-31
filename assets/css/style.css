@@ -1,6 +1,7 @@
 
     body {
-        font-family: 'Slabo 27px', serif;
+        font-family: 'Slabo', serif;
+        font-size: 3em;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
         background-image: url(../images/trivia.png);
@@ -9,64 +10,80 @@
     }
 
     h1 {
-        font-family: 'Slabo 27px', serif;
-        font-size: 40px;
+        font-family: 'Slabo', serif;
+        font-size: 20%;
+        color: red;
 
+    }
+
+    p {
+        color: salmon;
     }
     .answers {
         margin-bottom: 20px;
     }
 
-
-    .trivia {
+    .question {
         display: block;
-        background-color: lightcoral;
-        color: lightgreen;
+        background-color: slategray;
+        color: salmon;
         font-weight: bold;
-        font-size: 10px;
+        font-size: 1.3em;
         padding-left: 5px;
         border-radius: 12px;
     }
 
-    
-    }
-    .answers label {
-        display: block;
-        background-color: rgb(245, 201, 245);        
-    }
-    p, #results {
-        font-size: 1.3em;
-        font-weight: bold;
+    .trivia {
+        
+        text-align: left;
+        color: gray;
+        font-size: 10px;
+        padding-left: 20px;
+        border-radius: 12px;
     }
 
+    
+   
+    
 
     .resultsBoard {
         padding-top: 20px;
         padding-right: 50px;
     }
-    #answers:hover,
-    #answers:focus {
-        background: #0053ba;
+
+    #answer {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        background-color: pink;
+        color: white;
+        margin-bottom: 18px;
+        border: 0px;
+        border-radius: 12px;
+        padding: 10px;
+    }
+
+
+    #answer:hover,
+
+    #answer:focus {
+        background: salmon;
         font-family: 'Slabo 27px', serif;
         color: white;
         
     }
 
-    #answers:focus {
+    #answer:focus {
         outline: 1px solid #fff;
         outline-offset: -4px;
     }
 
-    #answers:active {
+    #answer:active {
         transform: scale(0.99);
     }
 
-    .quiz {
-        text-align: left;
-        padding-left: 50px;
-        color: saddlebrown;
-    }
-    .answers label {
+    
+
+    .answer label {
        display: block;
        background-color: lightslategray;        
        background-color: lightgoldenrodyellow;  
@@ -75,6 +92,8 @@
    }
    
     .resultsBoard {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5em;
         padding-top: 50px;
         padding-right: 50px;
         }
