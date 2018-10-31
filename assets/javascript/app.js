@@ -21,7 +21,13 @@ var countDown = 30;
   }
 });
 
-  
+//
+var quizContainer = document.getElementById("quiz");
+var resultsArray = document.getElementById("results");
+var answerButton = document.getElementById("answers");  
+
+
+
 // New Trivia Game
 (function() {
   function newTrivia() {
@@ -96,10 +102,10 @@ triviaGame.forEach((newTrivia, qNum) => {
 resultsArray.innerHTML = `${numCorrect} out of ${triviaGame.length}`;
 }
 
-//Write to resultsBoard
-var quizContainer = document.getElementById("quiz");
-var resultsArray = document.getElementById("results");
-var submitButton = document.getElementById("answers");
+
+// var quizContainer = document.getElementById("quiz");
+// var resultsArray = document.getElementById("results");
+// var submitButton = document.getElementById("answers");
 
 //
 var triviaGame = [
@@ -119,7 +125,7 @@ questions =
 newTrivia();
   
 //Rad Party Button to display score
-submitButton.addEventListener("click", showResults);
+answerButton.addEventListener("click", showResults);
 $(function () {
   $('.rad').click(function () {
      $('.rad').hide();
