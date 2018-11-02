@@ -1,7 +1,6 @@
 
     body {
         font-family: 'Slabo', serif;
-        font-size: 3em;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
         background-image: url(../images/trivia.png);
@@ -11,89 +10,67 @@
 
     h1 {
         font-family: 'Slabo', serif;
-        font-size: 50%;
-        color: red;
+        font-size: 40px;
+        color: salmon;
 
     }
 
-    p {
-        color: grey;
-        font-size: 40%;
-
-    }
     .answers {
         margin-bottom: 20px;
     }
 
     
-
     .trivia {
         display: block;
         background-color: slategray;
-        text-align: left;
+        text-align: justify;
         font-weight: bold;
         color: salmon;
-        font-size: 20px;
+        font-size: 16px;
         padding-left: 5px;
         border-radius: 10px;
     }
 
-    .trivias {
+    .triv {
         text-align: left;
-        padding-left: 20px;
+        padding-left: 100px;
         color: salmon;
     }
     
+    .answers label {
+    display: block;
+    background-color: slategray;  
+    padding-left: 5px;
+    border-radius: 12px;   
+    }
+
+
+    p, #results {
+        color: pink;
+        font-size: 20px;
+    }
 
     .resultsBoard {
-        padding-top: 20px;
-        padding-right: 50px;
-    }
-
-    #answer {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 16px;
-        background-color: pink;
-        color: white;
-        margin-bottom: 18px;
-        border: 0px;
-        border-radius: 12px;
-        padding: 10px;
-    }
+        display: block;
+        background-color: slategray;
+        padding-left: 50px;
+        border-radius: 50px;    }
 
 
-    #answer:hover,
+   .rad {
+    visibility: hidden;
+}
 
-    #answer:focus {
-        background: salmon;
-        font-family: 'Slabo 27px', serif;
-        color: white;
-        
-    }
+#submit {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: pink;
+    color: white;
+    margin-bottom: 18px;
+    border: 0px;
+    border-radius: 12px;
+    padding: 10px;
+}
 
-    #answer:focus {
-        outline: 1px solid #fff;
-        outline-offset: -4px;
-    }
 
-    #answer:active {
-        transform: scale(0.99);
-    }
-
-    
-
-    .answer label {
-       display: block;
-       background-color: lightslategray;        
-       background-color: lightgoldenrodyellow;  
-       padding-left: 5px;
-       border-radius: 12px;   
-   }
-   
-    .resultsBoard {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 1.5em;
-        padding-top: 50px;
-        padding-right: 50px;
-        }
-
+#submit:hover,

@@ -17,7 +17,7 @@ document.getElementById('timer').textContent = countDown;
 
     $('body').css('background-image', 'url(./assets/images/trivia2.png)');
     $('.resultsBoard').css('font-size', '2em').css('color', '#FF0000');
-    $('.trivia').css('visibility', 'hidden');
+    $('.triv').css('visibility', 'hidden');
     $('.rad').css('visibility', 'visible');
   }
 });
@@ -41,7 +41,7 @@ document.getElementById('timer').textContent = countDown;
        answers.push(
           `<label> 
           
-          <input type="radio" name="trivia${tNum}" value="${ansLetter}">
+          <input type="radio" name="triv${tNum}" value="${ansLetter}">
                ${ansLetter} :
                ${newTrivia.answers[ansLetter]}
 
@@ -96,9 +96,9 @@ resultsArray.innerHTML = `${numCorrect} out of ${triviaGame.length}`;
 }
 
 
-var triviaContainer = document.getElementById("trivia");
+var triviaContainer = document.getElementById("triv");
 var resultsArray = document.getElementById("results");
-var answerButton = document.getElementById("answers");
+var submitButton = document.getElementById("submit");
 
 //start Trivia
 var triviaGame = [
@@ -118,7 +118,7 @@ var triviaGame = [
 newTrivia();
   
 //Rad Party Button to display score
-answerButton.addEventListener("click", showResults);
+submitButton.addEventListener("click", showResults);
 $(function () {
   $('.rad').click(function () {
      $('.rad').hide();
