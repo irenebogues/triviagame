@@ -11,39 +11,38 @@
 
     h1 {
         font-family: 'Slabo', serif;
-        font-size: 20%;
+        font-size: 50%;
         color: red;
 
     }
 
     p {
-        color: salmon;
+        color: grey;
+        font-size: 40%;
+
     }
     .answers {
         margin-bottom: 20px;
     }
 
-    .questions {
-        display: block;
-        background-color: slategray;
-        color: salmon;
-        font-weight: bold;
-        font-size: 1.3em;
-        padding-left: 5px;
-        border-radius: 12px;
-    }
+    
 
     .trivia {
-        
+        display: block;
+        background-color: slategray;
         text-align: left;
-        color: gray;
-        font-size: 10px;
-        padding-left: 20px;
-        border-radius: 12px;
+        font-weight: bold;
+        color: salmon;
+        font-size: 20px;
+        padding-left: 5px;
+        border-radius: 10px;
     }
 
-    
-   
+    .trivias {
+        text-align: left;
+        padding-left: 20px;
+        color: salmon;
+    }
     
 
     .resultsBoard {

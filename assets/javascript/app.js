@@ -1,34 +1,30 @@
-//If counter gets to 0, alert Times Up! and questions are marked incorrect.
 $(document).ready(function() {
-  var countDown = 30;
- 
+
+
+//Setting Trivia Timer  
 var countDown = 30;
-  var quizTimer = setInterval(function () {
+var triviaTimer = setInterval(function () {
     countDown--;
-
-
+document.getElementById('timer').textContent = countDown;
     if (countDown <= 0)
-    clearInterval(quizTimer);
-}, 1000)
+    clearInterval(triviaTimer);
+}, 1000);
 
+
+//Setting Time-up Event, reveal liquid rainbow party colors and highlight score
   setTimeout(timeUp, 1000 * 30);
   function timeUp() {
 
-    $('body').css("background-image", "url(../images/trivia2.png)");  
+    $('body').css('background-image', 'url(./assets/images/trivia2.png)');
     $('.resultsBoard').css('font-size', '2em').css('color', '#FF0000');
     $('.trivia').css('visibility', 'hidden');
-    $('.rad').css("visibility", "visible");  
+    $('.rad').css('visibility', 'visible');
   }
 });
-
-//
-var quizContainer = document.getElementById("quiz");
-var resultsArray = document.getElementById("results");
-var answerButton = document.getElementById("answers");  
+  
 
 
-
-// New Trivia Game
+// New Trivia Game, immediately invoking game on page load
 (function() {
   function newTrivia() {
     //Array to store HTML output
@@ -37,51 +33,48 @@ var answerButton = document.getElementById("answers");
     triviaGame.forEach((newTrivia, tNum) => {
       //Array to store answers
       //Store right and wrong answers
-      var answers = []
+      var answers = [];
 
-  
+  //for each trivia loop
      for (ansLetter in newTrivia.answers) {
         //Add radio button for each answer - Found this snippet on another site and modified.
        answers.push(
           `<label> 
           
-          <input type="radio" name="questions${tNum}" value="${ansLetter}">
+          <input type="radio" name="trivia${tNum}" value="${ansLetter}">
                ${ansLetter} :
                ${newTrivia.answers[ansLetter]}
-          
-          
-          </label>` 
 
-        
+          </label>` 
         );
        }
     
-//Push question and answers to answers array
+//Push trivia and answers to answers array
 output.push(
-    `<div class="questions"> ${newTrivia.questions} </div>
-    <div class="answers"> ${answers.join("")} </div>`
+    `<div class="trivia"> ${newTrivia.trivia} </div>
+    <div class="answers"> ${answers.join("")} </div>` 
 
     );
   });
 
 
-//Push the questions, answers, and radio buttons to HTML
-quizContainer.innerHTML = output.join("");
+//Push the trivia, answers, and radio buttons to HTML
+triviaContainer.innerHTML = output.join("");
 }
 
 
  //Track answers
  function showResults() {
-    var answersArrays = quizContainer.querySelectorAll(".answers");
+    var answersArrays = triviaContainer.querySelectorAll(".answer");
  
   let numCorrect = 0;
 
 
 //Get users answers
-triviaGame.forEach((newTrivia, qNum) => {
+triviaGame.forEach((newTrivia, tNum) => {
     //This section contains some snippets from other sites that have been combined or modified
-    var answersArray = answersArrays[qNum];
-    var selector = 'input[name=question${qNum}]:checked';
+    var answersArray = answersArrays[tNum];
+    var selector = 'input[name=trivia${tNum}]:checked';
     var userAnswers = (answersArray.querySelector(selector) || {}).value;
 
     // Increment CORRECT if answer is correct
@@ -103,14 +96,14 @@ resultsArray.innerHTML = `${numCorrect} out of ${triviaGame.length}`;
 }
 
 
-// var quizContainer = document.getElementById("quiz");
-// var resultsArray = document.getElementById("results");
-// var submitButton = document.getElementById("answers");
+var triviaContainer = document.getElementById("trivia");
+var resultsArray = document.getElementById("results");
+var answerButton = document.getElementById("answers");
 
-//
+//start Trivia
 var triviaGame = [
-//    Create an array of objects, each one representing a question
-questions =  
+//    Create an array of objects, each one representing a trivia
+ 
     {trivia: "Which of the following is not a member of OPEC?",
         answers: {a1: "United States", a2: "Venezuela", a3: "Singapore", a4: "Saudi Arabia"}, correctAnswer: "a3"},
     {trivia: "What is the only mammal born with horns?", 
@@ -131,9 +124,8 @@ $(function () {
      $('.rad').hide();
     $('.rad').show();
   });
-})
-})
-
+});
+})();
 
  
 
