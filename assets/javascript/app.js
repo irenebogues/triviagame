@@ -41,7 +41,7 @@ document.getElementById('timer').textContent = countDown;
        answers.push(
           `<label> 
           
-          <input type="radio" name="triv${tNum}" value="${ansLetter}">
+          <input type="radio" name="trivia"${tNum}" value="${ansLetter}">
                ${ansLetter} :
                ${newTrivia.answers[ansLetter]}
 
